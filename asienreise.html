@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asienreise Juli 2026 · Patrick, Claudia & Leonie</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:         #f5f7fa;
+    --bg2:        #eef1f6;
+    --card:       #ffffff;
+    --border:     rgba(0,90,180,0.12);
+    --blue:       #0057a8;
+    --blue-light: #3a8fe0;
+    --orange:     #e8631a;
+    --orange-lt:  #f5944a;
+    --dark:       #0e1d35;
+    --text:       #1a2a42;
+    --muted:      #7a8fa8;
+    --pool:       #0057a8;
+    --pool-light: #3a8fe0;
+    --radius:     14px;
+    --shadow:     0 2px 18px rgba(0,57,108,0.09);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6; min-height: 100vh; }
+
+  header {
+    background: linear-gradient(135deg, #0e1d35 0%, #0057a8 55%, #e8631a 100%);
+    padding: 3rem 1.25rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(232,99,26,0.35) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(0,87,168,0.4) 0%, transparent 55%);
+    pointer-events: none;
+  }
+  .eyebrow { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 0.6rem; position: relative; }
+  header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 6vw, 3.5rem); color: #fff; line-height: 1.1; font-weight: 600; position: relative; }
+  header h1 em { color: #f5c88a; font-style: italic; font-weight: 400; }
+  .subtitle { margin-top: 0.6rem; font-size: 12.5px; color: rgba(255,255,255,0.60); letter-spacing: 0.05em; position: relative; }
+  .leg-flow { display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; margin-top: 1.3rem; position: relative; }
+  .leg-place { background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1px solid rgba(255,255,255,0.2); }
+  .leg-arrow { color: rgba(255,255,255,0.5); font-size: 13px; align-self: center; }
+
+  .tabs { display: flex; overflow-x: auto; gap: 0; border-bottom: 2px solid var(--border); background: #fff; scrollbar-width: none; box-shadow: 0 2px 8px rgba(0,57,108,0.06); }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab-btn { flex-shrink: 0; padding: 0.9rem 1.1rem; font-size: 12.5px; font-family: 'Inter', sans-serif; font-weight: 500; color: var(--muted); background: none; border: none; border-bottom: 3px solid transparent; margin-bottom: -2px; cursor: pointer; transition: all .2s; white-space: nowrap; }
+  .tab-btn:hover { color: var(--blue); }
+  .tab-btn.active { color: var(--blue); border-bottom-color: var(--orange); font-weight: 600; }
+
+  .container { max-width: 700px; margin: 0 auto; padding: 0 1rem 4rem; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+  .section-title { font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin: 2rem 0 0.85rem; font-weight: 600; }
+
+  .day-block { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1rem; overflow: hidden; box-shadow: var(--shadow); }
+  .day-header { padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--border); background: linear-gradient(90deg, rgba(0,87,168,0.06), transparent); }
+  .day-header.gold { background: linear-gradient(90deg, rgba(232,99,26,0.08), transparent); }
+  .day-date { font-size: 11px; color: var(--muted); margin-bottom: 2px; }
+  .day-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--dark); font-weight: 600; line-height: 1.2; }
+  .day-body { padding: 0.9rem 1.2rem; }
+
+  .timeline-item { display: flex; gap: 0.9rem; padding: 0.55rem 0; border-bottom: 1px solid rgba(0,87,168,0.07); }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-item.pool-item { background: linear-gradient(90deg, rgba(0,87,168,0.07), transparent); border-radius: 8px; padding: 0.55rem 0.75rem; margin: 0.2rem -0.55rem; border: 1px solid rgba(58,143,224,0.2); border-bottom: 1px solid rgba(58,143,224,0.2); }
+  .timeline-time { flex-shrink: 0; width: 44px; font-size: 11.5px; color: var(--orange); font-weight: 600; padding-top: 2px; }
+  .timeline-item.pool-item .timeline-time { color: var(--pool); }
+  .timeline-text { font-size: 13px; color: var(--text); flex: 1; }
+  .timeline-text strong { color: var(--dark); display: block; font-size: 13.5px; font-weight: 600; }
+  .timeline-item.pool-item .timeline-text strong { color: var(--pool); }
+  .note { font-size: 11.5px; color: var(--muted); margin-top: 2px; line-height: 1.5; }
+  .addr { font-size: 11px; color: var(--blue); margin-top: 3px; font-weight: 500; }
+  .highlight-text { color: var(--orange); font-weight: 600; }
+
+  .booking-chip { background: linear-gradient(90deg, rgba(232,99,26,0.07), rgba(232,99,26,0.03)); border: 1px solid rgba(232,99,26,0.18); border-radius: 10px; padding: 0.75rem 1rem; margin-top: 0.7rem; }
+  .chip-title { font-size: 11px; font-weight: 700; color: var(--orange); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 5px; }
+  .chip-row { display: flex; justify-content: space-between; font-size: 12px; color: var(--text); padding: 2px 0; }
+  .chip-row span:first-child { color: var(--muted); }
+
+  .tip-box { background: linear-gradient(90deg, rgba(0,87,168,0.06), transparent); border-left: 3px solid var(--blue-light); border-radius: 0 8px 8px 0; padding: 9px 13px; font-size: 12.5px; color: var(--text); line-height: 1.55; margin-top: 10px; }
+  .note-box { background: linear-gradient(90deg, rgba(232,99,26,0.07), transparent); border-left: 3px solid var(--orange); border-radius: 0 8px 8px 0; padding: 9px 13px; font-size: 12.5px; color: var(--text); line-height: 1.55; margin-top: 10px; }
+  .leonie-box { background: linear-gradient(90deg, rgba(0,87,168,0.08), transparent); border-left: 3px solid var(--pool-light); border-radius: 0 8px 8px 0; padding: 9px 13px; font-size: 12.5px; color: var(--text); line-height: 1.55; margin-top: 10px; }
+  .ov-box { background: linear-gradient(90deg, rgba(0,140,70,0.06), transparent); border-left: 3px solid #1a9a5a; border-radius: 0 8px 8px 0; padding: 9px 13px; font-size: 12px; color: var(--text); line-height: 1.55; margin-top: 8px; }
+
+  .overview-hero { background: linear-gradient(135deg, #0e1d35, #0057a8 60%, #c05010); border-radius: 18px; padding: 1.8rem 1.5rem; margin: 1.5rem 0 0.5rem; text-align: center; position: relative; overflow: hidden; }
+  .overview-hero::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse at 80% 20%, rgba(232,99,26,0.4) 0%, transparent 55%); }
+  .oh-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: #fff; margin-bottom: 4px; position: relative; font-weight: 600; }
+  .oh-sub { font-size: 12px; color: rgba(255,255,255,0.6); position: relative; }
+
+  .info-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.2rem; margin-bottom: 0.75rem; box-shadow: var(--shadow); }
+  .info-card-title { font-weight: 700; color: var(--dark); font-size: 13.5px; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem; }
+  .info-card-title .tag { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(0,87,168,0.1); color: var(--blue); padding: 2px 9px; border-radius: 20px; }
+  .info-card-title .tag.gold { background: rgba(232,99,26,0.12); color: var(--orange); }
+  .info-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 4px 0; border-bottom: 1px solid rgba(0,87,168,0.07); font-size: 12.5px; gap: 1rem; }
+  .info-row:last-child { border-bottom: none; }
+  .info-row .label { color: var(--muted); flex-shrink: 0; }
+  .info-row .value { color: var(--text); text-align: right; }
+  .info-row .value strong { color: var(--dark); }
+
+  .pack-controls { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.2rem 0 1rem; }
+  .filter-btn { padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1px solid var(--border); background: transparent; color: var(--muted); cursor: pointer; transition: all .15s; font-family: 'Inter', sans-serif; }
+  .filter-btn.active { background: var(--blue); border-color: var(--blue); color: #fff; }
+  .pack-category { margin-bottom: 1.25rem; }
+  .cat-title { font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); font-weight: 600; margin-bottom: 0.5rem; }
+  .pack-item { display: flex; align-items: center; gap: 0.65rem; padding: 0.4rem 0; border-bottom: 1px solid rgba(0,87,168,0.07); cursor: pointer; }
+  .pack-item:last-child { border-bottom: none; }
+  .pack-item input[type="checkbox"] { accent-color: var(--blue); width: 15px; height: 15px; flex-shrink: 0; cursor: pointer; }
+  .pack-item label { font-size: 13px; color: var(--text); cursor: pointer; flex: 1; }
+  .pack-item.checked label { text-decoration: line-through; color: var(--muted); }
+  .pack-badge { font-size: 10px; padding: 1px 7px; border-radius: 10px; font-weight: 500; flex-shrink: 0; }
+  .badge-p { background: rgba(0,87,168,0.12); color: var(--blue); }
+  .badge-c { background: rgba(232,99,26,0.12); color: var(--orange); }
+  .badge-l { background: rgba(26,154,90,0.12); color: #1a7a50; }
+  .badge-all { background: rgba(0,0,0,0.07); color: var(--muted); }
+  .pack-item[data-hidden="true"] { display: none; }
+
+  .akt-block { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.2rem; margin-bottom: 0.75rem; box-shadow: var(--shadow); }
+  .akt-city { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); font-weight: 600; margin-bottom: 3px; }
+  .akt-name { font-family: 'Cormorant Garamond', serif; font-weight: 600; color: var(--dark); font-size: 1.1rem; margin-bottom: 0.3rem; }
+  .akt-desc { font-size: 12.5px; color: var(--text); line-height: 1.55; }
+  .akt-meta { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+  .akt-tag { font-size: 11px; padding: 2px 10px; border-radius: 20px; background: rgba(0,87,168,0.09); color: var(--blue); }
+  .akt-tag.warn { background: rgba(232,99,26,0.10); color: var(--orange); }
+
+  hr.divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+  @media (max-width: 420px) { .day-header { flex-direction: column; gap: 0.25rem; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Familienreise · Juli 2026</div>
+  <h1>Bangkok, Penang<br><em>&amp; Kuala Lumpur</em></h1>
+  <p class="subtitle">Patrick · Claudia · Leonie &nbsp;|&nbsp; 3. Juli – 19. Juli 2026</p>
+  <div class="leg-flow">
+    <span class="leg-place">🇨🇭 Luzern</span>
+    <span class="leg-arrow">→</span>
+    <span class="leg-place">🇴🇲 Muscat</span>
+    <span class="leg-arrow">→</span>
+    <span class="leg-place">🇹🇭 Bangkok</span>
+    <span class="leg-arrow">→</span>
+    <span class="leg-place">🇲🇾 Penang</span>
+    <span class="leg-arrow">→</span>
+    <span class="leg-place">🇲🇾 KL</span>
+    <span class="leg-arrow">→</span>
+    <span class="leg-place">🇲🇾 Putrajaya</span>
+    <span class="leg-arrow">→</span>
+    <span class="leg-place">🇴🇲 Muscat</span>
+    <span class="leg-arrow">→</span>
+    <span class="leg-place">🇨🇭 Zürich</span>
+  </div>
+</header>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('reise',event)">🗺 Reise</button>
+  <button class="tab-btn" onclick="switchTab('transport',event)">✈️ Transport</button>
+  <button class="tab-btn" onclick="switchTab('bangkok',event)">🏯 Bangkok</button>
+  <button class="tab-btn" onclick="switchTab('penang',event)">🏖 Penang</button>
+  <button class="tab-btn" onclick="switchTab('kl',event)">🏙 Kuala Lumpur</button>
+  <button class="tab-btn" onclick="switchTab('putrajaya',event)">🕌 Putrajaya</button>
+  <button class="tab-btn" onclick="switchTab('aktivitaeten',event)">🌴 Aktivitäten</button>
+  <button class="tab-btn" onclick="switchTab('packliste',event)">🎒 Packliste</button>
+</div>
+
+<!-- ════ REISE ════ -->
+<div id="tab-reise" class="tab-content active"><div class="container">
+  <div class="overview-hero">
+    <div class="oh-title">16 Nächte in Südostasien</div>
+    <div class="oh-sub">Oman Air via Muscat · AirAsia · 4 Hotels</div>
+  </div>
+  <div class="section-title">Tag für Tag</div>
+
+  <div class="day-block">
+    <div class="day-header gold"><div class="day-date">Donnerstag, 3. Juli 2026</div><div class="day-title">Abreise aus Luzern</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">17:35</div><div class="timeline-text"><strong>Zug Luzern → Zürich Flughafen</strong><span class="note">IR 75 · Gleis 6 · Ankunft 18:44</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">19:30</div><div class="timeline-text"><strong>Check-in Flughafen</strong><span class="note">Oman Air WY 154 · Ref. SPZNEU</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">20:35</div><div class="timeline-text"><strong>Abflug Zürich (ZRH)</strong><span class="note">WY 154 nach Muscat (MCT) · Economy Q</span></div></div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Freitag, 4. Juli 2026</div><div class="day-title">Transit Muscat · Ankunft Bangkok</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">05:50</div><div class="timeline-text"><strong>Ankunft Muscat (MCT)</strong><span class="note">05:50 Muscat (UTC+4) · 03:50 Zürich · 3h Transit · WY 815 check-in</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">08:40</div><div class="timeline-text"><strong>Weiterflug Bangkok (BKK)</strong><span class="note">08:40 Muscat (UTC+4) · WY 815 · Ankunft 17:45 Bangkok (UTC+7)</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">ca.19:00</div><div class="timeline-text"><strong>Ankunft Shangri-La Bangkok</strong><span class="note">89 Soi Wat Suan Plu, New Road, Bangrak · +66 2 236 7777</span>
+        <div class="booking-chip"><div class="chip-title">Shangri-La Bangkok</div>
+          <div class="chip-row"><span>Bestätigung</span><span>12673660824</span></div>
+          <div class="chip-row"><span>Check-out</span><span>Mi. 9. Juli</span></div>
+          <div class="chip-row"><span>Dauer</span><span>5 Nächte</span></div>
+        </div>
+      </div></div>
+      <div class="tip-box">Frühstück für 2 Personen inklusive (NEXT2 Café). Leonie (unter 6 J.) isst gratis.</div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Sa. 5. Juli – Di. 8. Juli</div><div class="day-title">Bangkok erkunden</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">5. Jul</div><div class="timeline-text"><strong>Chatuchak Weekend Market &amp; Lumphini Park</strong><span class="note">Einziger Sonntag → nicht verpassen</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">6. Jul</div><div class="timeline-text"><strong>Tempel-Tag: Grand Palace, Wat Pho, Wat Arun</strong><span class="note">Per Flussboot · The Verandah abends</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">7. Jul</div><div class="timeline-text"><strong>Chinatown &amp; Asiatique am Abend</strong><span class="note">MRT zu Yaowarat · Shuttle-Boot zu Asiatique</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">8. Jul</div><div class="timeline-text"><strong>Siam &amp; MELAND Spielplatz</strong><span class="note">BTS nach Siam · letzter Pool-Nachmittag</span></div></div>
+      <div class="tip-box">Detaillierter Tagesplan im Reiter «Bangkok».</div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Mittwoch, 9. Juli 2026</div><div class="day-title">Weiterreise nach Penang</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">08:00</div><div class="timeline-text"><strong>Check-out Shangri-La Bangkok</strong></div></div>
+      <div class="timeline-item"><div class="timeline-time">10:50</div><div class="timeline-text"><strong>Abflug Don Mueang (DMK)</strong><span class="note">10:50 Bangkok DMK (UTC+7) · AirAsia FD 323 · Ankunft 13:35 Penang (UTC+8)</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">ca.15:00</div><div class="timeline-text"><strong>Check-in PARKROYAL Penang Resort</strong><span class="note">Batu Ferringhi Beach · Bestät. 318806113</span>
+        <div class="booking-chip"><div class="chip-title">PARKROYAL Penang Resort</div>
+          <div class="chip-row"><span>Bestätigung</span><span>318806113</span></div>
+          <div class="chip-row"><span>Check-out</span><span>Mo. 13. Juli</span></div>
+          <div class="chip-row"><span>Dauer</span><span>4 Nächte</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Do. 10. – So. 12. Juli</div><div class="day-title">Penang – Strand &amp; George Town</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">—</div><div class="timeline-text"><strong>Strand Batu Ferringhi</strong><span class="note">Direkt beim Hotel · Für Leonie ideal</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">—</div><div class="timeline-text"><strong>George Town erkunden</strong><span class="note">Street Art, Kek Lok Si Tempel, Hawker-Stände</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">—</div><div class="timeline-text"><strong>Penang Hill (Bukit Bendera)</strong><span class="note">Standseilbahn hoch, Aussicht über die Insel</span></div></div>
+      <div class="tip-box">Detaillierter Tagesplan im Reiter «Penang».</div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-header gold"><div class="day-date">Montag, 13. Juli 2026</div><div class="day-title">Weiterreise Kuala Lumpur</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">14:05</div><div class="timeline-text"><strong>Abflug Penang (PEN)</strong><span class="note">14:05 Penang (UTC+8) · AirAsia AK 6154 · Ankunft 15:15 KUL (UTC+8)</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">ca.17:00</div><div class="timeline-text"><strong>Check-in Four Points by Sheraton KL</strong><span class="note">City Centre · Bestät. 73630070</span>
+        <div class="booking-chip"><div class="chip-title">Four Points by Sheraton KL</div>
+          <div class="chip-row"><span>Bestätigung</span><span>73630070</span></div>
+          <div class="chip-row"><span>Check-out</span><span>Do. 17. Juli</span></div>
+          <div class="chip-row"><span>Dauer</span><span>4 Nächte</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Di. 14. – Mi. 16. Juli</div><div class="day-title">Kuala Lumpur</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">—</div><div class="timeline-text"><strong>Merdeka 118 &amp; Perdana Botanical Garden</strong></div></div>
+      <div class="timeline-item"><div class="timeline-time">—</div><div class="timeline-text"><strong>Thean Hou Tempel &amp; Jalan Alor</strong></div></div>
+      <div class="timeline-item"><div class="timeline-time">—</div><div class="timeline-text"><strong>KL Forest Eco Park &amp; KL Tower</strong></div></div>
+      <div class="tip-box">Detaillierter Tagesplan im Reiter «Kuala Lumpur».</div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Donnerstag, 17. Juli 2026</div><div class="day-title">Weiterreise Putrajaya</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">—</div><div class="timeline-text"><strong>Check-out Four Points · Check-in Mercure Living Putrajaya</strong><span class="note">Bestät. QLBHFGHD · 2 Nächte</span></div></div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-header gold"><div class="day-date">Sonntag, 19. Juli 2026</div><div class="day-title">Rückreise nach Zürich</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">09:30</div><div class="timeline-text"><strong>Abflug KUL (Terminal 1)</strong><span class="note">09:30 Kuala Lumpur (UTC+8) · WY 822 → Ankunft 12:15 Muscat (UTC+4)</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">13:55</div><div class="timeline-text"><strong>Weiterflug Muscat → Zürich</strong><span class="note">WY 153 · 13:55 Muscat (UTC+4) · Ankunft 19:35 Zürich (UTC+2) · ⚠️ Umgeplant</span></div></div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ════ TRANSPORT ════ -->
+<div id="tab-transport" class="tab-content"><div class="container">
+  <div class="section-title">Flüge</div>
+  <div class="info-card">
+    <div class="info-card-title">WY 154 · ZRH → MCT <span class="tag gold">Oman Air</span></div>
+    <div class="info-row"><span class="label">Datum</span><span class="value">Do. 3. Juli 2026</span></div>
+    <div class="info-row"><span class="label">Abflug</span><span class="value"><strong>20:35 Zürich (ZRH) · UTC+2</strong></span></div>
+    <div class="info-row"><span class="label">Ankunft</span><span class="value">05:50 Muscat (MCT) · UTC+4 · (4. Juli)</span></div>
+    <div class="info-row"><span class="label">Flugzeit</span><span class="value">ca. 7h · Zeitdiff. +2h</span></div>
+    <div class="info-row"><span class="label">Klasse</span><span class="value">Economy Q</span></div>
+    <div class="info-row"><span class="label">Buchungsref.</span><span class="value">SPZNEU</span></div>
+  </div>
+  <div class="info-card">
+    <div class="info-card-title">WY 815 · MCT → BKK <span class="tag gold">Oman Air</span></div>
+    <div class="info-row"><span class="label">Datum</span><span class="value">Fr. 4. Juli 2026</span></div>
+    <div class="info-row"><span class="label">Abflug</span><span class="value"><strong>08:40 Muscat (MCT) · UTC+4</strong></span></div>
+    <div class="info-row"><span class="label">Ankunft</span><span class="value">17:45 Bangkok (BKK) · UTC+7</span></div>
+    <div class="info-row"><span class="label">Flugzeit</span><span class="value">ca. 6h · Zeitdiff. +3h</span></div>
+    <div class="info-row"><span class="label">Buchungsref.</span><span class="value">SPZNEU</span></div>
+  </div>
+  <div class="info-card">
+    <div class="info-card-title">FD 323 · DMK → PEN <span class="tag">AirAsia</span></div>
+    <div class="info-row"><span class="label">Datum</span><span class="value">Mi. 9. Juli 2026</span></div>
+    <div class="info-row"><span class="label">Abflug</span><span class="value"><strong>10:50 Don Mueang (DMK) · UTC+7</strong></span></div>
+    <div class="info-row"><span class="label">Ankunft</span><span class="value">13:35 Penang (PEN) · UTC+8</span></div>
+    <div class="info-row"><span class="label">Flugzeit</span><span class="value">ca. 1h 45min · Zeitdiff. +1h</span></div>
+    <div class="note-box">⚠️ Abflug ab Don Mueang (DMK), nicht Suvarnabhumi (BKK). Vom Shangri-La ca. 60 Min. mit Grab. Früh genug starten.</div>
+  </div>
+  <div class="info-card">
+    <div class="info-card-title">AK 6154 · PEN → KUL <span class="tag">AirAsia</span></div>
+    <div class="info-row"><span class="label">Datum</span><span class="value">Mo. 13. Juli 2026</span></div>
+    <div class="info-row"><span class="label">Abflug</span><span class="value"><strong>14:05 Penang (PEN) · UTC+8</strong></span></div>
+    <div class="info-row"><span class="label">Ankunft</span><span class="value">15:15 Kuala Lumpur (KLIA2) · UTC+8</span></div>
+    <div class="info-row"><span class="label">Sitzplätze</span><span class="value">6A (Claudia), 6B (Patrick)</span></div>
+    <div class="info-row"><span class="label">Gepäck</span><span class="value">25 kg checked + 7 kg Handgepäck</span></div>
+    <div class="info-row"><span class="label">Mahlzeit</span><span class="value">Prawn &amp; Chicken Wonton Noodles</span></div>
+  </div>
+  <div class="info-card">
+    <div class="info-card-title">WY 822 · KUL → MCT <span class="tag gold">Oman Air</span></div>
+    <div class="info-row"><span class="label">Datum</span><span class="value">So. 19. Juli 2026</span></div>
+    <div class="info-row"><span class="label">Abflug</span><span class="value"><strong>09:30 Kuala Lumpur (KUL T1) · UTC+8</strong></span></div>
+    <div class="info-row"><span class="label">Ankunft</span><span class="value">12:15 Muscat (MCT) · UTC+4</span></div>
+    <div class="info-row"><span class="label">Flugzeit</span><span class="value">ca. 6h 45min · Zeitdiff. −4h</span></div>
+  </div>
+  <div class="info-card">
+    <div class="info-card-title">WY 153 · MCT → ZRH <span class="tag gold">Oman Air</span></div>
+    <div class="info-row"><span class="label">Datum</span><span class="value">So. 19. Juli 2026</span></div>
+    <div class="info-row"><span class="label">Abflug</span><span class="value"><strong>13:55 Muscat (MCT) · UTC+4</strong></span></div>
+    <div class="info-row"><span class="label">Ankunft</span><span class="value">19:35 Zürich (ZRH) · UTC+2</span></div>
+    <div class="info-row"><span class="label">Flugzeit</span><span class="value">ca. 7h 40min · Zeitdiff. −2h</span></div>
+    <div class="note-box">⚠️ Umgeplant von Oman Air. Neue Zeiten: 13:55 MCT ab, 19:35 ZRH an (ursprünglich 13:40 / 19:05).</div>
+  </div>
+
+  <div class="section-title">Übernachtungen</div>
+  <div class="info-card">
+    <div class="info-card-title">🇹🇭 Shangri-La Bangkok</div>
+    <div class="info-row"><span class="label">Adresse</span><span class="value">89 Soi Wat Suan Plu, New Road, Bangrak</span></div>
+    <div class="info-row"><span class="label">Telefon</span><span class="value">+66 2 236 7777</span></div>
+    <div class="info-row"><span class="label">Daten</span><span class="value">4.–9. Juli (5 Nächte)</span></div>
+    <div class="info-row"><span class="label">Bestätigung</span><span class="value"><strong>12673660824</strong></span></div>
+    <div class="info-row"><span class="label">BTS</span><span class="value">Saphan Taksin (S6) · 1 Min. zu Fuss</span></div>
+  </div>
+  <div class="info-card">
+    <div class="info-card-title">🇲🇾 PARKROYAL Penang Resort</div>
+    <div class="info-row"><span class="label">Adresse</span><span class="value">Batu Ferringhi Beach, 11100 Penang</span></div>
+    <div class="info-row"><span class="label">Daten</span><span class="value">9.–13. Juli (4 Nächte)</span></div>
+    <div class="info-row"><span class="label">Bestätigung</span><span class="value"><strong>318806113</strong></span></div>
+    <div class="tip-box">Tourism Tax: MYR 10 pro Zimmer/Nacht für ausländische Pässe.</div>
+  </div>
+  <div class="info-card">
+    <div class="info-card-title">🇲🇾 Four Points by Sheraton KL City Centre</div>
+    <div class="info-row"><span class="label">Daten</span><span class="value">13.–17. Juli (4 Nächte)</span></div>
+    <div class="info-row"><span class="label">Bestätigung</span><span class="value"><strong>73630070</strong></span></div>
+    <div class="info-row"><span class="label">Marriott Bonvoy</span><span class="value">Cristina Sua · 4.856 Punkte</span></div>
+  </div>
+  <div class="info-card">
+    <div class="info-card-title">🇲🇾 Mercure Living Putrajaya</div>
+    <div class="info-row"><span class="label">Daten</span><span class="value">17.–19. Juli (2 Nächte)</span></div>
+    <div class="info-row"><span class="label">Bestätigung</span><span class="value"><strong>QLBHFGHD</strong></span></div>
+    <div class="info-row"><span class="label">Lage</span><span class="value">Direkt neben Alamanda Shopping Centre</span></div>
+  </div>
+</div></div>
+
+<!-- ════ BANGKOK ════ -->
+<div id="tab-bangkok" class="tab-content"><div class="container">
+  <div class="overview-hero">
+    <div class="oh-title">4 Tage Bangkok</div>
+    <div class="oh-sub">5.–8. Juli · Shangri-La am Chao Phraya · Hotel: BTS Saphan Taksin (S6)</div>
+  </div>
+  <div class="leonie-box" style="margin:1rem 0">🏊 <strong style="color:var(--pool)">Leonies Pool-Basis:</strong> Das Shangri-La hat einen grossen Aussenpool mit Blick auf den Chao Phraya. Täglich ca. 14:30–17:00 als fixer Erholungsblock, damit Leonie Energie tankt und die Stimmung für den Abend stimmt.</div>
+  <div class="tip-box">Juli = Regenzeit. Morgens früh starten (08:30), Mittag in klimatisierten Räumen, nachmittags Pool, abends nochmal raus. Immer Wasser dabei. BTS-Karte aufladen (Rabbit Card, ca. 100 Baht Depot) oder MRT-Ticket vor Ort kaufen.</div>
+
+  <!-- TAG 1: SONNTAG 5. JULI -->
+  <div class="section-title">Sonntag, 5. Juli · Chatuchak &amp; Lumphini</div>
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Einziger Sonntag der Reise in BKK · nicht verpassen!</div><div class="day-title">Chatuchak Market · Lumphini Park · ICONSIAM</div></div>
+    <div class="day-body">
+      <div class="timeline-item">
+        <div class="timeline-time">08:30</div>
+        <div class="timeline-text">
+          <strong>Chatuchak Weekend Market</strong>
+          <span class="addr">📍 587/10 Kamphaeng Phet 2 Rd, Chatuchak, Bangkok</span>
+          <span class="note">Frühzeitig bevor es zu heiss wird · Über 10.000 Stände · Kinderbereich, Spielzeug, Essen · Nur Sa &amp; So geöffnet</span>
+          <div class="ov-box">🚇 <strong>BTS:</strong> Ab Saphan Taksin (S6) bis Mo Chit (N8) · Endstation Silom Line dann umsteigen oder direkt auf Sukhumvit Line bis Mo Chit · ca. 35 Min., ca. 50 Baht · Ausgang 1 direkt zum Markt</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">11:00</div>
+        <div class="timeline-text">
+          <strong>Rückfahrt &amp; Mittagessen</strong>
+          <span class="note">BTS zurück Richtung Stadtzentrum · Café/Restaurant Silom Road oder MBK Food Court · klimatisiert</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">13:00</div>
+        <div class="timeline-text">
+          <strong class="highlight-text">Lumphini Park · Waraneidechsen!</strong>
+          <span class="addr">📍 Rama IV Road / Ratchadamri Road, Pathum Wan · Eintritt kostenlos · 04:30–22:00</span>
+          <span class="note">Riesige Waraneidechsen laufen frei herum · Tretboote auf dem See · Spielbereich · viel Schatten</span>
+          <div class="ov-box">🚇 <strong>BTS/MRT:</strong> Ab Mo Chit MRT Blue Line bis Si Lom Station (Ausgang 2) · oder BTS bis Sala Daeng (S2), 5 Min. Fussweg · Alternativ Taxi ca. 60–80 Baht</div>
+        </div>
+      </div>
+      <div class="timeline-item pool-item">
+        <div class="timeline-time">15:00</div>
+        <div class="timeline-text">
+          <strong>🏊 Pool Shangri-La · Leonie-Zeit</strong>
+          <span class="note">BTS Sala Daeng → Saphan Taksin · zurück ins Hotel · Snack auf der Terrasse</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">19:00</div>
+        <div class="timeline-text">
+          <strong>Abendessen ICONSIAM · SookSiam</strong>
+          <span class="addr">📍 299 Charoen Nakhon Rd, Khlong San · Fähre ab Hotel-Pier · 10 Min., kostenlos</span>
+          <span class="note">Indoor Floating Market im EG · Thai-Strassenfood unter einem Dach · Kinderfreundlich · Eintritt frei</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAG 2: MONTAG 6. JULI -->
+  <div class="section-title">Montag, 6. Juli · Tempel-Tag</div>
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Muss-Programm am Fluss</div><div class="day-title">Grand Palace · Wat Pho · Wat Arun · The Verandah</div></div>
+    <div class="day-body">
+      <div class="tip-box" style="margin-bottom:0.75rem">Alle drei Tempel per Flussboot vom Hotel-Pier erreichbar · Schultern und Knie für alle drei bedeckt · Sarong am Eingang verfügbar</div>
+      <div class="timeline-item">
+        <div class="timeline-time">08:30</div>
+        <div class="timeline-text">
+          <strong>Flussboot zum Grand Palace</strong>
+          <span class="note">Ab Hotel-Pier · Orange-Flag-Boot Richtung Nong Khaem · Ausstieg Tha Chang Pier (N9) · ca. 20 Min. · ca. 16 Baht</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">09:00</div>
+        <div class="timeline-text">
+          <strong class="highlight-text">Grand Palace &amp; Wat Phra Kaew</strong>
+          <span class="addr">📍 Na Phra Lan Rd, Phra Borom Maha Ratchawang, Phra Nakhon · Eintritt 500 Baht · 08:30–15:30</span>
+          <span class="note">Smaragdbuddha · goldene Türme · ca. 1,5 Stunden</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">10:30</div>
+        <div class="timeline-text">
+          <strong class="highlight-text">Wat Pho · Liegender Buddha</strong>
+          <span class="addr">📍 2 Sanam Chai Rd, Phra Nakhon · 5 Min. zu Fuss · Eintritt 300 Baht · 08:00–18:30</span>
+          <span class="note">46 Meter lang, vergoldet · 1 Stunde</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">11:30</div>
+        <div class="timeline-text">
+          <strong class="highlight-text">Wat Arun · Tempel der Morgenröte</strong>
+          <span class="addr">📍 158 Wang Doem Rd, Wat Arun, Bangkok Yai · 2 Min. Fähre ab Tha Tien Pier · Eintritt 200 Baht · 08:00–18:00</span>
+          <span class="note">Porzellantürme direkt am Fluss · 45 Min.</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">12:30</div>
+        <div class="timeline-text">
+          <strong>Mittagessen · Arun Residence</strong>
+          <span class="addr">📍 36-38 Soi Pratu Nok Yung, Wang Doem Rd, Bangkok Yai · 3 Min. zu Fuss von Wat Arun</span>
+          <span class="note">Flussterrasse mit direktem Blick auf Wat Pho · ruhig, schöne Atmosphäre</span>
+        </div>
+      </div>
+      <div class="timeline-item pool-item">
+        <div class="timeline-time">14:30</div>
+        <div class="timeline-text">
+          <strong>🏊 Pool Shangri-La · Leonie-Zeit</strong>
+          <span class="note">Flussboot zurück zum Hotel-Pier · Kein Programm, nur spielen · Leonie hat sich den Pool verdient</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">19:30</div>
+        <div class="timeline-text">
+          <strong>Dinner · The Verandah · Mandarin Oriental</strong>
+          <span class="addr">📍 48 Oriental Ave, Bang Rak · 5 Min. zu Fuss vom Shangri-La</span>
+          <span class="note">Flussterrasse · Reservierung vorab empfohlen: mandarinoriental.com/bangkok</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAG 3: DIENSTAG 7. JULI -->
+  <div class="section-title">Dienstag, 7. Juli · Chinatown &amp; Asiatique</div>
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Yaowarat · Strassenfood · Asiatique am Abend</div><div class="day-title">Chinatown · Abendmarkt am Fluss</div></div>
+    <div class="day-body">
+      <div class="timeline-item">
+        <div class="timeline-time">09:00</div>
+        <div class="timeline-text">
+          <strong>Yaowarat Road · Chinatown</strong>
+          <span class="addr">📍 Yaowarat Rd, Samphanthawong, Bangkok · Herz von Chinatown</span>
+          <span class="note">Goldläden, Tempel, bunte Laternen · für Leonie ein Farben-Erlebnis · Gassen erkunden · vormittags noch ruhig</span>
+          <div class="ov-box">🚇 <strong>MRT Blue Line:</strong> Ab Saphan Taksin BTS → Silom MRT (kurze Fussgängerverbindung) → Wat Mangkon Station (BL29) · Ausgang 1, direkt ins Herz von Yaowarat · ca. 25 Min., ca. 25 Baht · <em>Alternativ</em>: Flussboot ab Hotel-Pier bis Ratchawong Pier, 10 Min., sehr schön</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">10:30</div>
+        <div class="timeline-text">
+          <strong>Wat Mangkon Kamalawat · Drachentempel</strong>
+          <span class="addr">📍 423 Charoen Krung Rd, Samphanthawong · 3 Min. zu Fuss von MRT Wat Mangkon · kostenlos</span>
+          <span class="note">Grösster chinesisch-buddhistischer Tempel Bangkoks · Räucherstäbchen, Drachen, Gold · Sehr eindrücklich für Leonie</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">12:00</div>
+        <div class="timeline-text">
+          <strong>Mittagessen · T&amp;K Seafood</strong>
+          <span class="addr">📍 49-51 Phadung Dao Rd, Samphanthawong · direkt an der Yaowarat Road</span>
+          <span class="note">Seafood-Institution in Chinatown · Gegrillte Meeresfrüchte, Dim Sum · Günstig und sehr gut · Auch für Kinder geeignet</span>
+        </div>
+      </div>
+      <div class="timeline-item pool-item">
+        <div class="timeline-time">14:00</div>
+        <div class="timeline-text">
+          <strong>🏊 Pool Shangri-La · Mittagspause</strong>
+          <span class="note">MRT zurück bis Silom → BTS Saphan Taksin · kurze Ruhepause, Leonie im Pool</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">16:30</div>
+        <div class="timeline-text">
+          <strong>Charoen Krung Road · Spaziergang</strong>
+          <span class="addr">📍 Charoen Krung Rd, Bang Rak · direkt beim Hotel</span>
+          <span class="note">Bangkoks älteste Strasse · Galerien, Cafés, lokale Shops · keine Eile, einfach flanieren</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">19:30</div>
+        <div class="timeline-text">
+          <strong class="highlight-text">Asiatique The Riverfront · Riesenrad!</strong>
+          <span class="addr">📍 2194 Charoen Krung Rd, Bang Kho Laem</span>
+          <span class="note">Abendmarkt im alten Hafenstil · Riesenrad für Leonie · viele Restaurants und Shops · sehr stimmungsvoll</span>
+          <div class="ov-box">🚤 <strong>Shuttle-Boot:</strong> Kostenlos ab Saphan-Taksin-Pier (direkt beim BTS) · ca. 15 Min. · fährt ab ca. 16:00, alle 30 Min.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAG 4: MITTWOCH 8. JULI -->
+  <div class="section-title">Mittwoch, 8. Juli · Siam &amp; MELAND</div>
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Letzter Bangkok-Tag · Leonie-Fokus</div><div class="day-title">Siam Square · MELAND Spielplatz · Abschluss-Pool</div></div>
+    <div class="day-body">
+      <div class="timeline-item">
+        <div class="timeline-time">09:00</div>
+        <div class="timeline-text">
+          <strong>BTS nach Siam</strong>
+          <span class="note">Ab Saphan Taksin (S6) bis Siam (CEN) · ca. 10 Min., ca. 25 Baht · Frühstück in einem Café am Siam Square</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">10:30</div>
+        <div class="timeline-text">
+          <strong class="highlight-text">MELAND · Siam Paragon · Leonie-Highlight!</strong>
+          <span class="addr">📍 Siam Paragon, Level 1, 991 Rama I Rd, Pathum Wan · Öffnung 10:00 · 4.8 Sterne · Eintritt vor Ort</span>
+          <span class="note">Riesiger klimatisierter Indoorspielplatz · Klettern, Rutschen, Bällebad · Ideal für 5-Jährige · 2 bis 2,5 Stunden einplanen</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">13:00</div>
+        <div class="timeline-text">
+          <strong>Mittagessen Siam Paragon</strong>
+          <span class="addr">📍 Siam Paragon Food Hall, Erdgeschoss · klimatisiert, grosse Auswahl</span>
+          <span class="note">Leonie wählt selbst · Thai, Japanisch, westlich · alles vorhanden</span>
+        </div>
+      </div>
+      <div class="timeline-item pool-item">
+        <div class="timeline-time">14:30</div>
+        <div class="timeline-text">
+          <strong>🏊 Letzter Pool-Nachmittag Shangri-La</strong>
+          <span class="note">BTS Siam → Saphan Taksin · Ausgiebig schwimmen · Leonie geniesst den Garten am Fluss · Bangkok-Abschluss</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">18:30</div>
+        <div class="timeline-text">
+          <strong>Abendessen Hotel oder ICONSIAM</strong>
+          <span class="note">Je nach Energie · Früh schlafen: morgen Check-out 08:00, dann Grab nach Don Mueang (ca. 60 Min.)</span>
+        </div>
+      </div>
+      <div class="note-box">⚠️ Morgen früh: Grab nach Don Mueang (DMK) rechtzeitig bestellen · Fahrzeit ca. 60 Min., bei Stau bis 90 Min.</div>
+    </div>
+  </div>
+
+  <div class="section-title">Praktisches Bangkok</div>
+  <div class="info-card">
+    <div class="info-card-title">ÖV in Bangkok</div>
+    <div class="info-row"><span class="label">BTS Skytrain</span><span class="value">Saphan Taksin (S6) · Silom Line · Hotel 1 Min. zu Fuss</span></div>
+    <div class="info-row"><span class="label">MRT Blue Line</span><span class="value">Für Chinatown (Wat Mangkon) · Transfer bei Silom/Si Lom</span></div>
+    <div class="info-row"><span class="label">Flussboot</span><span class="value">Ab Hotel-Pier · Orange Flag · Richtung Norden: Tempel</span></div>
+    <div class="info-row"><span class="label">Shuttle Asiatique</span><span class="value">Kostenlos ab Saphan Taksin Pier · ab 16:00</span></div>
+    <div class="info-row"><span class="label">Ticket-Tipp</span><span class="value">Rabbit Card (BTS) oder MRT-Karte · je ca. 100 Baht Depot</span></div>
+    <div class="info-row"><span class="label">Grab</span><span class="value">Für Chinatown direkt, Fahrten mit Koffer, Regenzeit</span></div>
+  </div>
+  <div class="info-card">
+    <div class="info-card-title">Reservierungen &amp; Tickets</div>
+    <div class="info-row"><span class="label">The Verandah</span><span class="value">Vorab: mandarinoriental.com/bangkok · Mo. Abend</span></div>
+    <div class="info-row"><span class="label">Grand Palace</span><span class="value">Vor Ort · 500 Baht · ab 08:30</span></div>
+    <div class="info-row"><span class="label">Wat Pho</span><span class="value">Vor Ort · 300 Baht</span></div>
+    <div class="info-row"><span class="label">Wat Arun</span><span class="value">Vor Ort · 200 Baht</span></div>
+    <div class="info-row"><span class="label">MELAND</span><span class="value">Vor Ort · Siam Paragon Level 1 · ab 10:00</span></div>
+  </div>
+  <div class="leonie-box">💡 <strong style="color:var(--pool)">Leonie-Tipp:</strong> Die Waraneidechsen im Lumphini Park sind absolute Stars. Sie werden bis zu 2 Meter lang, laufen frei herum und sind völlig zahm. Das wird ihr Gesprächsthema der ganzen Reise.</div>
+</div></div>
+
+<!-- ════ PENANG ════ -->
+<div id="tab-penang" class="tab-content"><div class="container">
+  <div class="overview-hero">
+    <div class="oh-title">4 Tage Penang</div>
+    <div class="oh-sub">9.–13. Juli · PARKROYAL Batu Ferringhi · Strand &amp; George Town</div>
+  </div>
+  <div class="tip-box" style="margin:1rem 0">Das Hotel liegt direkt am Strand in Batu Ferringhi, ca. 30 Min. mit dem Grab von George Town entfernt. In Penang ist Grab das sinnvollste Transportmittel: günstig, überall verfügbar, und es gibt kein gutes ÖV-Netz ausserhalb des Stadtzentrums.</div>
+
+  <div class="section-title">Donnerstag, 9. Juli · Ankunft</div>
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Anreisetag</div><div class="day-title">Ankommen &amp; Strand</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">13:35</div><div class="timeline-text"><strong>Ankunft Penang International Airport (PEN)</strong><span class="addr">📍 Jalan Tun Hussien Onn, Bayan Lepas</span><span class="note">Grab zum Hotel: ca. 45–55 Min., ca. MYR 40–55 · mit Koffern ideal</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">ca.15:00</div><div class="timeline-text"><strong>Check-in PARKROYAL Penang Resort</strong><span class="addr">📍 Batu Ferringhi Beach, 11100 Batu Ferringhi, Penang · +60 4 881 1133</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">16:00</div><div class="timeline-text"><strong class="highlight-text">Erster Strandbesuch</strong><span class="note">Direkt vor dem Hotel · kein Programm · Leonie entdeckt das Meer</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">19:00</div><div class="timeline-text"><strong>Batu Ferringhi Nachtmarkt</strong><span class="note">Zu Fuss vom Hotel · Strassenfood, Souvenirs</span></div></div>
+    </div>
+  </div>
+
+  <div class="section-title">Freitag, 10. Juli · George Town</div>
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">UNESCO-Altstadt</div><div class="day-title">Street Art · Clan Jetties · Hawker Food</div></div>
+    <div class="day-body">
+      <div class="timeline-item">
+        <div class="timeline-time">09:00</div>
+        <div class="timeline-text">
+          <strong>Grab nach George Town</strong>
+          <span class="note">Ca. 30 Min. · ca. MYR 15–25 · Frühzeitig, bevor es heiss wird</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">09:30</div>
+        <div class="timeline-text">
+          <strong class="highlight-text">Street Art · Armenian Street</strong>
+          <span class="addr">📍 Lebuh Armenian (Armenian Street), George Town · zu Fuss erkunden</span>
+          <span class="note">Berühmte Wandgemälde von Ernest Zacharevic · Drahtskulpturen · wie eine Schatzsuche für Leonie</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">11:00</div>
+        <div class="timeline-text">
+          <strong class="highlight-text">Clan Jetties</strong>
+          <span class="addr">📍 Weld Quay (Pengkalan Weld), George Town · 10 Min. zu Fuss von Armenian Street</span>
+          <span class="note">Alte Pfahlhaussiedlungen am Wasser · Holzstege, bunte Boote · für Leonie ein spezieller Ort</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">12:00</div>
+        <div class="timeline-text">
+          <strong>Mittagessen · Gurney Drive Hawker Centre</strong>
+          <span class="addr">📍 Gurney Drive, George Town · Grab dorthin, ca. 5 Min.</span>
+          <span class="note">Penang Char Kway Teow, Laksa, Cendol · günstig und sehr gut</span>
+        </div>
+      </div>
+      <div class="timeline-item"><div class="timeline-time">13:30</div><div class="timeline-text"><strong>Grab zurück zum Hotel</strong><span class="note">ca. MYR 20–30</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">14:00</div><div class="timeline-text"><strong>Nachmittag Strand &amp; Pool</strong><span class="note">PARKROYAL Pool direkt am Meer · Leonie-Zeit</span></div></div>
+    </div>
+  </div>
+
+  <div class="section-title">Samstag, 11. Juli · Penang Hill &amp; Tempel</div>
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Ausflugstag</div><div class="day-title">Penang Hill · Kek Lok Si Tempel</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-text"><strong>Grab zur Bergbahn-Station</strong><span class="addr">📍 Jalan Stesen, Air Itam · ca. 25 Min. vom Hotel, ca. MYR 20</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">09:30</div><div class="timeline-text"><strong class="highlight-text">Penang Hill (Bukit Bendera)</strong><span class="note">Standseilbahn auf 833 m · Für Leonie ist die Bergbahn das Erlebnis · oben kühle Luft und Aussicht über ganz Penang · Tickets vorab: penanghill.gov.my</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">11:30</div><div class="timeline-text"><strong class="highlight-text">Kek Lok Si Tempel</strong><span class="addr">📍 Jalan Kek Lok Si, Air Itam · 10 Min. Grab vom Penang Hill</span><span class="note">Riesige Guanyin-Statue · farbenfroh · Eintritt frei, Aufzug MYR 2</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">13:00</div><div class="timeline-text"><strong>Mittagessen Air Itam Markt</strong><span class="addr">📍 Air Itam Market, nahe Tempel · Assam Laksa ist hier berühmt</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">14:30</div><div class="timeline-text"><strong>Grab zurück · Freier Nachmittag am Strand</strong></div></div>
+    </div>
+  </div>
+
+  <div class="section-title">Sonntag, 12. Juli · Strandtag</div>
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Freier Tag</div><div class="day-title">Strand · Pool · Erholen</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">—</div><div class="timeline-text"><strong>Ganztages-Strand und Pool</strong><span class="note">Kein festes Programm · Leonie spielt im Sand · letzter Abend Penang</span></div></div>
+    </div>
+  </div>
+
+  <div class="section-title">Praktisches Penang</div>
+  <div class="info-card">
+    <div class="info-card-title">Transport</div>
+    <div class="info-row"><span class="label">Grab</span><span class="value">Hauptmittel · überall verfügbar · Batu Ferringhi → George Town ca. MYR 20–30</span></div>
+    <div class="info-row"><span class="label">Nachtmarkt</span><span class="value">Batu Ferringhi · zu Fuss vom Hotel</span></div>
+    <div class="info-row"><span class="label">Penang Hill</span><span class="value">Online-Ticket: penanghill.gov.my · empfohlen am Wochenende</span></div>
+  </div>
+  <div class="info-card">
+    <div class="info-card-title">Penang Food · Unbedingt probieren</div>
+    <div class="info-row"><span class="label">Char Kway Teow</span><span class="value">Gebratene Reisnudeln · Klassiker</span></div>
+    <div class="info-row"><span class="label">Asam Laksa</span><span class="value">Saure Fischsuppe · Air Itam Markt ist berühmt</span></div>
+    <div class="info-row"><span class="label">Cendol</span><span class="value">Süsses Dessert Kokosmilch/Eis · Leonie liebt es</span></div>
+    <div class="info-row"><span class="label">Nasi Kandar</span><span class="value">Curry-Reisgericht · überall verfügbar</span></div>
+  </div>
+  <div class="tip-box">George Town ist morgens am angenehmsten. Wer um 9 Uhr startet, hat die Altstadt fast für sich allein.</div>
+</div></div>
+
+<!-- ════ KUALA LUMPUR ════ -->
+<div id="tab-kl" class="tab-content"><div class="container">
+  <div class="overview-hero">
+    <div class="oh-title">4 Tage Kuala Lumpur</div>
+    <div class="oh-sub">13.–17. Juli · Four Points by Sheraton · City Centre</div>
+  </div>
+  <div class="tip-box" style="margin:1rem 0">Bereits gesehen: Petronas Towers, Batu Caves, Chinatown, Merdeka Square. Dieses Programm zeigt euch neue Orte. In KL ist Grab die einfachste Option, für Strecken mit MRT/LRT lohnt es sich aber auch.</div>
+
+  <div class="section-title">Montag, 13. Juli · Ankunft &amp; Erholung</div>
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Anreisetag aus Penang · kein Programm</div><div class="day-title">Ankommen · Pool · Saloma Link</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">15:15</div><div class="timeline-text"><strong>Ankunft KLIA2</strong><span class="note">KLIA Ekspres nach KL Sentral · 28 Min., MYR 55 · dann Grab zum Hotel, ca. 10 Min.</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">ca.17:00</div><div class="timeline-text"><strong>Check-in Four Points by Sheraton KL City Centre</strong><span class="note">Bestät. 73630070 · Zimmer beziehen, auspacken</span></div></div>
+      <div class="timeline-item pool-item"><div class="timeline-time">17:30</div><div class="timeline-text"><strong>🏊 Pool · Leonie-Zeit</strong><span class="note">Direkt nach dem Einchecken · kein Programm · einfach ankommen und entspannen</span></div></div>
+      <div class="timeline-item">
+        <div class="timeline-time">19:00</div>
+        <div class="timeline-text">
+          <strong>Saloma Link Brücke · optional</strong>
+          <span class="addr">📍 Saloma Link, Jalan Ampang / Jalan Tun Razak · Grab ca. 10 Min. · kostenlos · beleuchtet ab Einbruch der Dunkelheit</span>
+          <span class="note">Fussgängerbrücke mit farbiger Beleuchtung · kurzer Spaziergang · für Leonie ein Farben-Erlebnis · ca. 30–45 Min. · Rückkehr vor 20:00</span>
+        </div>
+      </div>
+      <div class="tip-box">Ankunftstag: kein festes Programm. Pool und ein kurzer Abendspaziergang reichen völlig. Die nächsten Tage sind fürs Erkunden reserviert.</div>
+    </div>
+  </div>
+
+
+
+  <div class="section-title">Dienstag, 14. Juli · Merdeka 118 &amp; Chinatown-Viertel</div>
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Historisches Zentrum &amp; neues Wahrzeichen</div><div class="day-title">Merdeka 118 · Sri Maha Mariamman · Kwai Chai Hong</div></div>
+    <div class="day-body">
+      <div class="timeline-item">
+        <div class="timeline-time">09:30</div>
+        <div class="timeline-text">
+          <strong class="highlight-text">Merdeka 118</strong>
+          <span class="addr">📍 No. 118, Jalan Hang Jebat, KL · Grab ca. 10 Min. · Tickets: merdeka118.com.my</span>
+          <span class="note">Höchstes Gebäude SEAsiens (678 m) · Aussichtsplattform vorab Status prüfen</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">10:30</div>
+        <div class="timeline-text">
+          <strong>Perdana Botanical Garden</strong>
+          <span class="addr">📍 Jalan Kebun Bunga, Tasik Perdana · direkt neben Merdeka 118 · kostenlos · 06:00–20:00</span>
+          <span class="note">Riesiger Park mit See · Leonie kann rennen und entdecken</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">11:30</div>
+        <div class="timeline-text">
+          <strong class="highlight-text">Sri Maha Mariamman Temple</strong>
+          <span class="addr">📍 163, Jalan Tun H.S. Lee, City Centre · 10 Min. zu Fuss / Grab von Merdeka 118 · kostenlos · täglich 06:00–12:00 &amp; 16:30–21:00</span>
+          <span class="note">Ältester Hindu-Tempel KLs (1873) · 23 m hoher Gopuram-Turm mit 228 farbigen Gottheiten · Schuhe am Eingang abgeben (MYR 1) · Für Leonie ein farbenprächtiger Kontrast zu den Moscheen</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">12:30</div>
+        <div class="timeline-text">
+          <strong>Mittagessen nahe Jalan Tun H.S. Lee</strong>
+          <span class="note">Lokale Mamak-Restaurants oder indische Küche in der Umgebung</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">14:00</div>
+        <div class="timeline-text">
+          <strong class="highlight-text">Kwai Chai Hong · Little Ghost Alley</strong>
+          <span class="addr">📍 Lorong Panggung, City Centre · 5 Min. zu Fuss von Sri Maha Mariamman · kostenlos · täglich 09:00–00:00</span>
+          <span class="note">Restaurierte Hintergasse aus den 1960ern · Wandgemälde, rote Holzbrücke, uralter Laternenpfahl · für Leonie wie eine Zeitreise · Cafés und Bars</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">16:00</div>
+        <div class="timeline-text">
+          <strong>Bukit Bintang schlendern</strong>
+          <span class="addr">📍 Jalan Bukit Bintang · Grab ca. 10 Min.</span>
+          <span class="note">Klimatisiert · Pavillon Mall, Strassencafés</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time">18:30</div>
+        <div class="timeline-text">
+          <strong>Abendessen · Kusa Vegan</strong>
+          <span class="addr">📍 Unit G2, Wisma Noble Land, Lorong Changkat Ceylon, Bukit Bintang · +60 11-5758 8479 · Di geschlossen · 11:00–15:00 &amp; 17:00–22:00</span>
+          <span class="note">Japanisch-veganes Restaurant · Ramen, Sushi, Tempeh, Mango Sushi · zen und ruhig · für Nicht-Veganer genau so empfehlenswert</span>
+        </div>
+      </div>
+      <div class="note-box">⚠️ Kusa Vegan ist dienstags geschlossen. Datum prüfen und allenfalls auf einen anderen Abend verschieben oder Tandoor Grill wählen.</div>
+    </div>
+  </div>
+
+  <div class="section-title">Mittwoch, 15. Juli · Freier Tag</div>
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Flexibler Tag</div><div class="day-title">Je nach Energie</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">—</div><div class="timeline-text"><strong>Option A: Petrosains Science Centre</strong><span class="addr">📍 Level 4, Suria KLCC, Jalan Ampang · MRT/LRT KLCC Station · petrosains.com.my</span><span class="note">Interaktives Wissenschaftsmuseum · Klimatisiert · Für Leonie ideal</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">—</div><div class="timeline-text"><strong>Option B: KLCC Park &amp; Springbrunnenshow</strong><span class="addr">📍 Jalan Ampang, KLCC · direkt unter den Petronas Towers · kostenlos</span><span class="note">Park mit Spielplatz · abends Springbrunnenshow mit Licht</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">—</div><div class="timeline-text"><strong>Option C: Islamic Arts Museum</strong><span class="addr">📍 Jalan Lembah Perdana, Tasik Perdana · Grab ca. 15 Min.</span><span class="note">Für ruhigeren Tag · beeindruckende Sammlung islamischer Kunst</span></div></div>
+    </div>
+  </div>
+
+  <div class="section-title">Donnerstag, 16. Juli · KL Forest &amp; KL Tower</div>
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Abschlusstag KL</div><div class="day-title">KL Forest Eco Park · KL Tower</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">10:00</div><div class="timeline-text"><strong>KL Forest Eco Park · Hängebrücke!</strong><span class="addr">📍 Jalan Raja Chulan, City Centre · Grab ca. 10 Min. · kostenlos</span><span class="note">Tropischer Urwald mitten in der Stadt · Hängebrücke durch den Dschungel · Für Leonie ein Abenteuer</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">11:30</div><div class="timeline-text"><strong class="highlight-text">KL Tower (Menara KL)</strong><span class="addr">📍 2 Jalan Punchak, Off Jalan P. Ramlee, KL · direkt neben Eco Park · menarakl.com.my</span><span class="note">Beste Aussicht auf die Petronas Towers · Revolving Restaurant Orbit oder Sky Box</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">13:00</div><div class="timeline-text"><strong>Mittagessen Bukit Nanas</strong><span class="note">Lokale Restaurants in der Umgebung</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">14:30</div><div class="timeline-text"><strong>Freie Zeit · Souvenirs · Entspannen</strong></div></div>
+      <div class="timeline-item"><div class="timeline-time">19:00</div><div class="timeline-text"><strong>Abschlussessen · eigene Wahl</strong><span class="note">Letzter Abend vor Putrajaya</span></div></div>
+    </div>
+  </div>
+
+  <div class="section-title">Praktisches KL</div>
+  <div class="info-card">
+    <div class="info-card-title">Transport KL</div>
+    <div class="info-row"><span class="label">Grab</span><span class="value">Hauptmittel · günstig, zuverlässig · MYR 5–20 innerhalb City</span></div>
+    <div class="info-row"><span class="label">MRT / LRT</span><span class="value">Für KLCC, Bukit Bintang, KL Sentral · sehr gut ausgebaut</span></div>
+    <div class="info-row"><span class="label">KLIA Ekspres</span><span class="value">KLIA2 → KL Sentral · 28 Min. · MYR 55</span></div>
+  </div>
+  <div class="info-card">
+    <div class="info-card-title">Tickets vorab</div>
+    <div class="info-row"><span class="label">Merdeka 118</span><span class="value">merdeka118.com.my · Status prüfen</span></div>
+    <div class="info-row"><span class="label">KL Tower</span><span class="value">menarakl.com.my</span></div>
+    <div class="info-row"><span class="label">Petrosains</span><span class="value">petrosains.com.my · vorab buchen</span></div>
+    <div class="info-row"><span class="label">Saloma Link</span><span class="value">Kostenlos · abends beleuchtet · Jalan Ampang</span></div>
+  </div>
+  <div class="info-card">
+    <div class="info-card-title">Restaurants KL</div>
+    <div class="info-row"><span class="label">Tandoor Grill</span><span class="value">Level 3A, Menara Bangkok Bank, Jalan Ampang · +60 3-2181 0003 · täglich 11:30–21:30</span></div>
+    <div class="info-row"><span class="label">Kusa Vegan</span><span class="value">Lorong Changkat Ceylon, Bukit Bintang · Di geschlossen · 11–15 &amp; 17–22 Uhr</span></div>
+    <div class="info-row"><span class="label">Jalan Alor</span><span class="value">Jalan Alor, Bukit Bintang · abends ab 18:00 · Strassenfood-Klassiker</span></div>
+  </div>
+  <div class="tip-box">Tandoor Grill ist fast beim Hotel: Menara Bangkok Bank liegt an der Jalan Ampang, nur ca. 5 Gehminuten vom Four Points. Ideal für ein Abendessen ohne grossen Aufwand.</div>
+</div></div>
+
+<!-- ════ PUTRAJAYA ════ -->
+<div id="tab-putrajaya" class="tab-content"><div class="container">
+  <div class="overview-hero">
+    <div class="oh-title">2 Nächte Putrajaya</div>
+    <div class="oh-sub">17.–19. Juli · Mercure Living Putrajaya · Abflug Sonntag früh</div>
+  </div>
+  <div class="tip-box" style="margin:1rem 0">Putrajaya ist Malaysias geplante Hauptstadt, kompakt und sauber. Alles liegt rund um den See. Ideal zum Abschalten vor dem langen Heimflug.</div>
+
+  <div class="section-title">Freitag, 17. Juli · Ankunft &amp; Putra Moschee</div>
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Anreisetag</div><div class="day-title">Check-in · See-Spaziergang · Moschee</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">—</div><div class="timeline-text"><strong>Check-out Four Points · Grab nach Putrajaya</strong><span class="note">Ca. 45 Min. · Grab empfohlen mit Koffern</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">—</div><div class="timeline-text"><strong>Check-in Mercure Living Putrajaya</strong><span class="addr">📍 Bestät. QLBHFGHD · direkt neben Alamanda Mall</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">16:00</div><div class="timeline-text"><strong class="highlight-text">Putra Moschee (Masjid Putra)</strong><span class="addr">📍 Persiaran Perdana, Presint 1, 62000 Putrajaya · Grab ca. 10 Min. · kostenlos · 09:00–18:00</span><span class="note">Die rosafarbene Moschee direkt am See · Abaya/Sarong wird gestellt · Sehr beeindruckend für Leonie</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">17:30</div><div class="timeline-text"><strong>Spaziergang am Putrajaya-See</strong><span class="note">Brücken, Wasser, Blick auf Moschee</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">19:00</div><div class="timeline-text"><strong>Abendessen Alamanda Mall</strong><span class="addr">📍 Persiaran Perdana, Putrajaya · zu Fuss vom Hotel</span><span class="note">Food Court und Restaurants · familienfreundlich</span></div></div>
+    </div>
+  </div>
+
+  <div class="section-title">Samstag, 18. Juli · Botanischer Garten &amp; Bootsfahrt</div>
+  <div class="day-block">
+    <div class="day-header"><div class="day-date">Letzter voller Tag</div><div class="day-title">Natur · See · Boote</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-text"><strong class="highlight-text">Putrajaya Botanical Garden</strong><span class="addr">📍 Precinct 1, 62000 Putrajaya · Grab ca. 10 Min. · kostenlos · 07:00–19:00</span><span class="note">Grosser gepflegter Garten · Schatten · Leonie kann frei laufen</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">10:30</div><div class="timeline-text"><strong>Taman Wetland</strong><span class="note">Feuchtgebiet beim See · Vögel, Holzstege übers Wasser</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">12:00</div><div class="timeline-text"><strong>Mittagessen</strong><span class="note">Restaurants am See oder Alamanda</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">14:00</div><div class="timeline-text"><strong class="highlight-text">Bootsfahrt Putrajaya-See</strong><span class="addr">📍 Putra Cruise Terminal, Persiaran Perdana · ca. MYR 20–35 pro Person · 30–45 Min.</span><span class="note">Panorama-Boot · Blick auf Moschee, Palace of Justice und Brücken · Für Leonie sehr beliebt</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">15:30</div><div class="timeline-text"><strong>Palace of Justice &amp; Perdana Putra</strong><span class="note">Regierungsgebäude im neo-mughalischen Stil · Fotostopps</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">17:00</div><div class="timeline-text"><strong>Zurück zum Hotel · Koffer packen</strong></div></div>
+      <div class="timeline-item"><div class="timeline-time">19:00</div><div class="timeline-text"><strong>Letztes Abendessen der Reise</strong><span class="note">Früh schlafen: morgen früh Abflug 09:30 KUL</span></div></div>
+    </div>
+  </div>
+
+  <div class="section-title">Sonntag, 19. Juli · Rückreise</div>
+  <div class="day-block">
+    <div class="day-header gold"><div class="day-date">Abreisetag</div><div class="day-title">Transfer Flughafen · Oman Air nach Zürich</div></div>
+    <div class="day-body">
+      <div class="timeline-item"><div class="timeline-time">früh</div><div class="timeline-text"><strong>Check-out Mercure Living Putrajaya</strong></div></div>
+      <div class="timeline-item"><div class="timeline-time">—</div><div class="timeline-text"><strong>Grab nach KUL Terminal 1</strong><span class="note">Ca. 20–25 Min. · rechtzeitig starten · Oman Air: Check-in 2h vorab</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">09:30</div><div class="timeline-text"><strong>Abflug KUL → Muscat</strong><span class="note">09:30 Kuala Lumpur (UTC+8) · WY 822 · Ankunft 12:15 Muscat (UTC+4)</span></div></div>
+      <div class="timeline-item"><div class="timeline-time">13:55</div><div class="timeline-text"><strong>Weiterflug Muscat → Zürich</strong><span class="note">WY 153 · 13:55 Muscat (UTC+4) · Ankunft 19:35 Zürich (UTC+2) · ⚠️ Umgeplant</span></div></div>
+    </div>
+  </div>
+
+  <div class="section-title">Praktisches Putrajaya</div>
+  <div class="info-card">
+    <div class="info-card-title">Hotel &amp; Lage</div>
+    <div class="info-row"><span class="label">Name</span><span class="value">Mercure Living Putrajaya</span></div>
+    <div class="info-row"><span class="label">Bestätigung</span><span class="value"><strong>QLBHFGHD</strong></span></div>
+    <div class="info-row"><span class="label">Lage</span><span class="value">Direkt neben Alamanda Mall</span></div>
+  </div>
+  <div class="info-card">
+    <div class="info-card-title">Transport &amp; Tipps</div>
+    <div class="info-row"><span class="label">Grab</span><span class="value">Hauptmittel · sehr günstig · MYR 5–15</span></div>
+    <div class="info-row"><span class="label">Zum Flughafen</span><span class="value">ca. 20–25 Min. · Terminal 1 (Oman Air)</span></div>
+    <div class="info-row"><span class="label">Putra Moschee</span><span class="value">Gratis · Abaya gestellt · 09:00–18:00</span></div>
+    <div class="info-row"><span class="label">Bootsfahrt</span><span class="value">Putra Cruise Terminal · MYR 20–35</span></div>
+    <div class="info-row"><span class="label">Botanical Garden</span><span class="value">Kostenlos · 07:00–19:00</span></div>
+  </div>
+  <div class="tip-box">Putrajaya ist sehr kompakt. Kein Stress, keine Menschenmassen. Genau das Richtige als letzter Stop vor dem langen Heimflug.</div>
+</div></div>
+
+<!-- ════ AKTIVITÄTEN ════ -->
+<div id="tab-aktivitaeten" class="tab-content"><div class="container">
+  <div class="section-title">🇹🇭 Bangkok</div>
+  <div class="akt-block"><div class="akt-city">Must-see</div><div class="akt-name">Grand Palace &amp; Wat Phra Kaew</div><div class="akt-desc">Der Königspalast mit dem Smaragdbuddha-Tempel ist der kulturelle Kern Bangkoks. Goldene Türme, Wandgemälde, beeindruckend für alle Altersgruppen.</div><div class="akt-meta"><span class="akt-tag">Na Phra Lan Rd, Phra Nakhon</span><span class="akt-tag warn">500 Baht</span><span class="akt-tag">08:30–15:30</span></div></div>
+  <div class="akt-block"><div class="akt-city">Must-see</div><div class="akt-name">Wat Pho · Liegender Buddha</div><div class="akt-desc">Die 46 Meter lange, vergoldete Buddhastatue ist surreal und unvergesslich. Direkt neben dem Grand Palace, gut kombinierbar.</div><div class="akt-meta"><span class="akt-tag">2 Sanam Chai Rd</span><span class="akt-tag warn">300 Baht</span><span class="akt-tag">08:00–18:30</span></div></div>
+  <div class="akt-block"><div class="akt-city">Must-see</div><div class="akt-name">Wat Arun · Tempel der Morgenröte</div><div class="akt-desc">Porzellantürme direkt am Flussufer. Kurze Fähre ab Tha Tien Pier. Am Nachmittag besonders schön.</div><div class="akt-meta"><span class="akt-tag">158 Wang Doem Rd</span><span class="akt-tag warn">200 Baht</span><span class="akt-tag">08:00–18:00</span></div></div>
+  <div class="akt-block"><div class="akt-city">Für Leonie</div><div class="akt-name">MELAND · Siam Paragon</div><div class="akt-desc">Riesiger klimatisierter Indoorspielplatz, ideal für 5-Jährige. 4.8 Sterne. 2 bis 2,5 Stunden einplanen.</div><div class="akt-meta"><span class="akt-tag">Siam Paragon, Level 1</span><span class="akt-tag warn">Eintritt vor Ort</span><span class="akt-tag">ab 10:00</span></div></div>
+  <div class="akt-block"><div class="akt-city">Für Leonie</div><div class="akt-name">Lumphini Park · Waraneidechsen</div><div class="akt-desc">Bis zu 2 Meter grosse Waraneidechsen laufen frei herum. Tretboote, Spielbereiche, viel Schatten. MRT Si Lom Ausgang 2.</div><div class="akt-meta"><span class="akt-tag">Rama IV / Ratchadamri Rd</span><span class="akt-tag">Kostenlos</span><span class="akt-tag">04:30–22:00</span></div></div>
+  <div class="akt-block"><div class="akt-city">Abend</div><div class="akt-name">Asiatique The Riverfront</div><div class="akt-desc">Abendmarkt im alten Hafenstil mit Riesenrad, Restaurants und Shops. Kostenloses Shuttle-Boot ab Saphan Taksin Pier.</div><div class="akt-meta"><span class="akt-tag">2194 Charoen Krung Rd</span><span class="akt-tag">Kein Eintritt</span><span class="akt-tag">ab 16:00</span></div></div>
+  <div class="akt-block"><div class="akt-city">Markt</div><div class="akt-name">Chatuchak Weekend Market</div><div class="akt-desc">Einer der grössten Märkte der Welt. Nur Sa &amp; So. Frühzeitig hin. BTS Mo Chit (N8), Ausgang 1.</div><div class="akt-meta"><span class="akt-tag warn">Nur Sa &amp; So</span><span class="akt-tag">BTS Mo Chit · Ausgang 1</span><span class="akt-tag">Kostenlos</span></div></div>
+  <hr class="divider">
+  <div class="section-title">🇲🇾 Penang</div>
+  <div class="akt-block"><div class="akt-city">Strand</div><div class="akt-name">Batu Ferringhi Beach</div><div class="akt-desc">Direkt beim PARKROYAL Hotel. Langer Sandstrand. Abends Nachtmarkt zu Fuss.</div><div class="akt-meta"><span class="akt-tag">Direkt beim Hotel</span><span class="akt-tag">Kostenlos</span></div></div>
+  <div class="akt-block"><div class="akt-city">Must-see</div><div class="akt-name">George Town Street Art</div><div class="akt-desc">UNESCO-Weltkulturerbe. Berühmte Wandgemälde von Ernest Zacharevic auf Armenian Street. Wie eine Schatzsuche durch die Gassen.</div><div class="akt-meta"><span class="akt-tag">Lebuh Armenian</span><span class="akt-tag">Kostenlos</span></div></div>
+  <div class="akt-block"><div class="akt-city">Kultur</div><div class="akt-name">Clan Jetties</div><div class="akt-desc">Alte Pfahlhaussiedlungen am Wasser. Holzstege, bunte Boote. Weld Quay, George Town.</div><div class="akt-meta"><span class="akt-tag">Pengkalan Weld</span><span class="akt-tag">Kostenlos</span></div></div>
+  <div class="akt-block"><div class="akt-city">Ausflug</div><div class="akt-name">Penang Hill (Bukit Bendera)</div><div class="akt-desc">Standseilbahn auf 833 m. Oben kühle Luft und Ausblick. Für Leonie ist die Bergbahn allein das Erlebnis.</div><div class="akt-meta"><span class="akt-tag warn">Online: penanghill.gov.my</span></div></div>
+  <div class="akt-block"><div class="akt-city">Tempel</div><div class="akt-name">Kek Lok Si Tempel</div><div class="akt-desc">Riesiger buddhistischer Tempel mit imposanter Guanyin-Statue. Jalan Kek Lok Si, Air Itam. Gut kombinierbar mit Penang Hill.</div><div class="akt-meta"><span class="akt-tag">Air Itam</span><span class="akt-tag">Eintritt frei</span></div></div>
+  <hr class="divider">
+  <div class="section-title">🇲🇾 Kuala Lumpur</div>
+  <div class="akt-block"><div class="akt-city">Iconic</div><div class="akt-name">Petronas Twin Towers</div><div class="akt-desc">Das Symbol von KL. KLCC Park direkt darunter mit Spielplatz und Springbrunnen. Jalan Ampang, MRT KLCC Station.</div><div class="akt-meta"><span class="akt-tag warn">Skybridge vorab buchen</span><span class="akt-tag">Park kostenlos</span></div></div>
+  <div class="akt-block"><div class="akt-city">Natur</div><div class="akt-name">KL Forest Eco Park · Hängebrücke</div><div class="akt-desc">Tropischer Urwald mitten in der Stadt mit Hängebrücke durch den Dschungel. Jalan Raja Chulan. Kostenlos.</div><div class="akt-meta"><span class="akt-tag">Jalan Raja Chulan</span><span class="akt-tag">Kostenlos</span></div></div>
+</div></div>
+
+<!-- ════ PACKLISTE ════ -->
+<div id="tab-packliste" class="tab-content"><div class="container">
+  <div class="pack-controls">
+    <button class="filter-btn active" onclick="filterPack('all',event)">Alle</button>
+    <button class="filter-btn" onclick="filterPack('p',event)">Patrick</button>
+    <button class="filter-btn" onclick="filterPack('c',event)">Claudia</button>
+    <button class="filter-btn" onclick="filterPack('l',event)">Leonie</button>
+  </div>
+  <div id="pack-list">
+    <div class="pack-category"><div class="cat-title">Dokumente</div>
+      <div class="pack-item" data-persons="p"><input type="checkbox" id="pi1"><label for="pi1">Reisepass Patrick</label><span class="pack-badge badge-p">Patrick</span></div>
+      <div class="pack-item" data-persons="c"><input type="checkbox" id="pi2"><label for="pi2">Reisepass Claudia</label><span class="pack-badge badge-c">Claudia</span></div>
+      <div class="pack-item" data-persons="l"><input type="checkbox" id="pi3"><label for="pi3">Reisepass Leonie</label><span class="pack-badge badge-l">Leonie</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi4"><label for="pi4">Flugtickets (digital / Print)</label><span class="pack-badge badge-all">Alle</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi5"><label for="pi5">Hotelbestätigungen (alle 4)</label><span class="pack-badge badge-all">Alle</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi6"><label for="pi6">Reiseversicherung</label><span class="pack-badge badge-all">Alle</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi7"><label for="pi7">Notfall-Kontakte (ausgedruckt)</label><span class="pack-badge badge-all">Alle</span></div>
+    </div>
+    <div class="pack-category"><div class="cat-title">Kleidung</div>
+      <div class="pack-item" data-persons="p"><input type="checkbox" id="pi8"><label for="pi8">T-Shirts (5–6 Stück)</label><span class="pack-badge badge-p">Patrick</span></div>
+      <div class="pack-item" data-persons="p"><input type="checkbox" id="pi9"><label for="pi9">Lange leichte Hose (Tempel)</label><span class="pack-badge badge-p">Patrick</span></div>
+      <div class="pack-item" data-persons="p"><input type="checkbox" id="pi10"><label for="pi10">Shorts (3–4 Stück)</label><span class="pack-badge badge-p">Patrick</span></div>
+      <div class="pack-item" data-persons="p"><input type="checkbox" id="pi11"><label for="pi11">Badehose</label><span class="pack-badge badge-p">Patrick</span></div>
+      <div class="pack-item" data-persons="p"><input type="checkbox" id="pi12"><label for="pi12">Leichte Abendjacke</label><span class="pack-badge badge-p">Patrick</span></div>
+      <div class="pack-item" data-persons="c"><input type="checkbox" id="pi13"><label for="pi13">T-Shirts / Tops (5–6 Stück)</label><span class="pack-badge badge-c">Claudia</span></div>
+      <div class="pack-item" data-persons="c"><input type="checkbox" id="pi14"><label for="pi14">Lange leichte Hose / Kleid (Tempel)</label><span class="pack-badge badge-c">Claudia</span></div>
+      <div class="pack-item" data-persons="c"><input type="checkbox" id="pi15"><label for="pi15">Badeanzug / Bikini</label><span class="pack-badge badge-c">Claudia</span></div>
+      <div class="pack-item" data-persons="c"><input type="checkbox" id="pi16"><label for="pi16">Abendoutfit (The Verandah etc.)</label><span class="pack-badge badge-c">Claudia</span></div>
+      <div class="pack-item" data-persons="l"><input type="checkbox" id="pi17"><label for="pi17">T-Shirts (5–6 Stück)</label><span class="pack-badge badge-l">Leonie</span></div>
+      <div class="pack-item" data-persons="l"><input type="checkbox" id="pi18"><label for="pi18">Shorts / Röcke (3–4 Stück)</label><span class="pack-badge badge-l">Leonie</span></div>
+      <div class="pack-item" data-persons="l"><input type="checkbox" id="pi19"><label for="pi19">Badeanzug (2 Stück)</label><span class="pack-badge badge-l">Leonie</span></div>
+      <div class="pack-item" data-persons="l"><input type="checkbox" id="pi20"><label for="pi20">Sandalen + geschlossene Schuhe</label><span class="pack-badge badge-l">Leonie</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi21"><label for="pi21">Flip-Flops / Sandalen</label><span class="pack-badge badge-all">Alle</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi22"><label for="pi22">Leichte Regenjacken / Ponchos</label><span class="pack-badge badge-all">Alle</span></div>
+    </div>
+    <div class="pack-category"><div class="cat-title">Gesundheit &amp; Hygiene</div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi23"><label for="pi23">Sonnencreme (hoch LSF)</label><span class="pack-badge badge-all">Alle</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi24"><label for="pi24">Insektenschutz (DEET oder Picaridin)</label><span class="pack-badge badge-all">Alle</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi25"><label for="pi25">Reiseapotheke (Durchfall, Fieber, Pflaster)</label><span class="pack-badge badge-all">Alle</span></div>
+      <div class="pack-item" data-persons="l"><input type="checkbox" id="pi26"><label for="pi26">Kinderapotheke (Ibuprofen-Saft, Thermometer)</label><span class="pack-badge badge-l">Leonie</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi27"><label for="pi27">Sonnenbrille</label><span class="pack-badge badge-all">Alle</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi28"><label for="pi28">Sonnenhut / Kappe</label><span class="pack-badge badge-all">Alle</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi29"><label for="pi29">Zahnbürste, Zahnpasta</label><span class="pack-badge badge-all">Alle</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi30"><label for="pi30">Handdesinfektionsmittel</label><span class="pack-badge badge-all">Alle</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi31"><label for="pi31">Diarrhöe-Mittel (Imodium)</label><span class="pack-badge badge-all">Alle</span></div>
+    </div>
+    <div class="pack-category"><div class="cat-title">Elektronik</div>
+      <div class="pack-item" data-persons="p"><input type="checkbox" id="pi32"><label for="pi32">Smartphone + Ladekabel</label><span class="pack-badge badge-p">Patrick</span></div>
+      <div class="pack-item" data-persons="p"><input type="checkbox" id="pi33"><label for="pi33">Powerbank</label><span class="pack-badge badge-p">Patrick</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi34"><label for="pi34">Universaladapter (Typ A/B/C)</label><span class="pack-badge badge-all">Alle</span></div>
+      <div class="pack-item" data-persons="p"><input type="checkbox" id="pi35"><label for="pi35">Kamera + Ladekabel</label><span class="pack-badge badge-p">Patrick</span></div>
+      <div class="pack-item" data-persons="p"><input type="checkbox" id="pi36"><label for="pi36">eSIM oder lokale SIM (TH/MY)</label><span class="pack-badge badge-p">Patrick</span></div>
+      <div class="pack-item" data-persons="l"><input type="checkbox" id="pi37"><label for="pi37">Tablet + Kopfhörer für Leonie (Flug)</label><span class="pack-badge badge-l">Leonie</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi38"><label for="pi38">Kopfhörer (Flug)</label><span class="pack-badge badge-all">Alle</span></div>
+    </div>
+    <div class="pack-category"><div class="cat-title">Für Leonie</div>
+      <div class="pack-item" data-persons="l"><input type="checkbox" id="pi39"><label for="pi39">Lieblingsstofftier / Schlafbegleiter</label><span class="pack-badge badge-l">Leonie</span></div>
+      <div class="pack-item" data-persons="l"><input type="checkbox" id="pi40"><label for="pi40">Kleines Rucksäckchen (ihr eigenes)</label><span class="pack-badge badge-l">Leonie</span></div>
+      <div class="pack-item" data-persons="l"><input type="checkbox" id="pi41"><label for="pi41">Snacks für den Flug</label><span class="pack-badge badge-l">Leonie</span></div>
+      <div class="pack-item" data-persons="l"><input type="checkbox" id="pi42"><label for="pi42">Schwimmflügel / Schwimmweste</label><span class="pack-badge badge-l">Leonie</span></div>
+      <div class="pack-item" data-persons="l"><input type="checkbox" id="pi43"><label for="pi43">Strandspielzeug (Eimer, Schaufel)</label><span class="pack-badge badge-l">Leonie</span></div>
+      <div class="pack-item" data-persons="l"><input type="checkbox" id="pi44"><label for="pi44">2–3 kleine Spiele / Bücher</label><span class="pack-badge badge-l">Leonie</span></div>
+    </div>
+    <div class="pack-category"><div class="cat-title">Diverses</div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi45"><label for="pi45">Rucksack für Tagesausflüge</label><span class="pack-badge badge-all">Alle</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi46"><label for="pi46">Wiederverwendbare Wasserflasche</label><span class="pack-badge badge-all">Alle</span></div>
+      <div class="pack-item" data-persons="p"><input type="checkbox" id="pi47"><label for="pi47">Kreditkarte (fremdwährungsfrei)</label><span class="pack-badge badge-p">Patrick</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi48"><label for="pi48">Thai Baht / Malaysian Ringgit (Bar)</label><span class="pack-badge badge-all">Alle</span></div>
+      <div class="pack-item" data-persons="all"><input type="checkbox" id="pi49"><label for="pi49">Kleiner Regenschirm</label><span class="pack-badge badge-all">Alle</span></div>
+    </div>
+  </div>
+</div></div>
+
+<script>
+function switchTab(name,e){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  if(e&&e.target)e.target.classList.add('active');
+}
+function filterPack(person,e){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  if(e&&e.target)e.target.classList.add('active');
+  document.querySelectorAll('.pack-item').forEach(item=>{
+    const p=item.dataset.persons;
+    item.setAttribute('data-hidden',(person==='all'||p===person||p==='all')?'false':'true');
+  });
+}
+document.querySelectorAll('.pack-item input[type="checkbox"]').forEach(cb=>{
+  const key='pack_asien_'+cb.id;
+  try{
+    cb.checked=localStorage.getItem(key)==='1';
+    if(cb.checked)cb.closest('.pack-item').classList.add('checked');
+    cb.addEventListener('change',()=>{
+      localStorage.setItem(key,cb.checked?'1':'0');
+      cb.closest('.pack-item').classList.toggle('checked',cb.checked);
+    });
+  }catch(e){}
+});
+</script>
+</body>
+</html>
